@@ -4,10 +4,9 @@
 class Solution {
     public List<Boolean> camelMatch(String[] queries, String pattern) {
         List<Boolean> result = new ArrayList<>();
-        boolean flag = false;
         for(String q : queries){
-            int j=0;
-            for(int i=0 ; i<q.length();i++){
+            boolean flag = false;
+            for(int i=0,j=0 ; i<q.length();i++){
                 char cq = q.charAt(i);
                 if(j<pattern.length() && cq == pattern.charAt(j)){
                     j++;
@@ -17,7 +16,6 @@ class Solution {
                     flag = false;break;
                 }
             }
-            if(j<pattern.length()) flag = false;
             result.add(flag);
         }
         return result;
